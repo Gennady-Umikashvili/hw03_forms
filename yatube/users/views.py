@@ -1,15 +1,13 @@
-from django.shortcuts import render
-
-from django.contrib.auth.views import LoginView, LogoutView, PasswordChangeView
-from django.contrib.auth.views import PasswordResetView, PasswordChangeDoneView, PasswordResetDoneView
-from django.contrib.auth.views import PasswordResetConfirmView, PasswordResetCompleteView
+from django.contrib.auth.views import LoginView, LogoutView
+from django.contrib.auth.views import PasswordResetView
+from django.contrib.auth.views import PasswordResetConfirmView
+from django.contrib.auth.views import PasswordResetDoneView
+from django.contrib.auth.views import PasswordResetCompleteView
+from django.contrib.auth.views import PasswordChangeDoneView
+from django.contrib.auth.views import PasswordChangeView
 from django.views.generic import CreateView
-
 from django.urls import reverse_lazy
-
-
 from .forms import CreationForm
-
 
 class SignUp(CreateView):
     form_class = CreationForm
