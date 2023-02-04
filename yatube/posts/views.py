@@ -12,10 +12,11 @@ def get_page_content(post_list, page_number):
     paginator = Paginator(post_list, NUMBERS_OF_POSTS)
     return paginator.get_page(page_number)
 
+
 def index(request):
     post_list = Post.objects.all()
     page_obj = get_page_content(post_list,
-                             request.GET.get('page'))
+                                request.GET.get('page'))
     return render(request, 'posts/index.html',
                   context={'page_obj': page_obj})
 
